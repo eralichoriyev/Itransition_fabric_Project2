@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "DataFlow_G2_OpenAQ_Bronze"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5e006f4f-5044-bb60-45eb-3da897d717bf"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "PL_NYC_Taxi_Ingestion"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b59100a8-ef9e-989f-474e-6f0434cebe26"
+  }
+}

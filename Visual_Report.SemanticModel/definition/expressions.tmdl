@@ -1,0 +1,11 @@
+expression 'DirectLake - M_Lakehouse_Itransition' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/95ebcbcf-35b4-4eda-bae3-344163c79c6c/aa1ee62d-2f24-4c14-b409-b89563d3e7fa", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: 7c937828-59a9-470c-841d-537b6a90e870
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[Silver_OpenAQ]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[gold_openaq]"}},"objectType":"Table"}]
+

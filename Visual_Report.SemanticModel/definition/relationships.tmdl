@@ -1,0 +1,4 @@
+relationship a4962232-45cf-9d84-71d9-4a3460726d02
+	fromColumn: Silver_NYC_Taxi.tpep_dropoff_datetime
+	toColumn: gold_nyc_taxi_daily.trip_date
+

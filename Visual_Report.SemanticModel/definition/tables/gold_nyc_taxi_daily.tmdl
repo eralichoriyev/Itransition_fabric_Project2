@@ -1,0 +1,75 @@
+table gold_nyc_taxi_daily
+	lineageTag: 1d6e3d70-0988-4147-95a0-e5325219786f
+	sourceLineageTag: [dbo].[gold_nyc_taxi_daily]
+
+	column trip_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 59007184-9956-4b95-8e5a-d9b389ad5190
+		sourceLineageTag: trip_date
+		summarizeBy: none
+		sourceColumn: trip_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column trip_count
+		dataType: int64
+		formatString: 0
+		lineageTag: cb70fae1-38e5-4779-863c-28d1d399c081
+		sourceLineageTag: trip_count
+		summarizeBy: none
+		sourceColumn: trip_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_trip_distance
+		dataType: double
+		lineageTag: e0525220-456a-4b73-8f4c-b0c75316129f
+		sourceLineageTag: avg_trip_distance
+		summarizeBy: none
+		sourceColumn: avg_trip_distance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_total_amount
+		dataType: double
+		lineageTag: 51ba3a48-2dd6-4d88-81c3-bb3acae906bd
+		sourceLineageTag: avg_total_amount
+		summarizeBy: none
+		sourceColumn: avg_total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_tip_amount
+		dataType: double
+		lineageTag: 845cbaee-0f97-472d-9029-8ab35945f567
+		sourceLineageTag: avg_tip_amount
+		summarizeBy: none
+		sourceColumn: avg_tip_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_passenger_count
+		dataType: double
+		lineageTag: 85bae54a-fd57-4fb1-8276-ec65c3e5c3fd
+		sourceLineageTag: avg_passenger_count
+		summarizeBy: none
+		sourceColumn: avg_passenger_count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition gold_nyc_taxi_daily = entity
+		mode: directLake
+		source
+			entityName: gold_nyc_taxi_daily
+			schemaName: dbo
+			expressionSource: 'DirectLake - M_Lakehouse_Itransition'
+

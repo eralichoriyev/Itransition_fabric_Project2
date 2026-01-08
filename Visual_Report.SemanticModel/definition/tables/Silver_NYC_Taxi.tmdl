@@ -1,0 +1,104 @@
+table Silver_NYC_Taxi
+	lineageTag: 4a6e7627-37a8-4bae-9a0d-1ceb5d416479
+	sourceLineageTag: [dbo].[Silver_NYC_Taxi]
+
+	column VendorID
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b7c129b-2622-44b5-ad81-9346a1d7226d
+		sourceLineageTag: VendorID
+		summarizeBy: count
+		sourceColumn: VendorID
+
+		annotation SummarizationSetBy = Automatic
+
+	column tpep_pickup_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: da949862-6914-4105-9c4a-08dbbc4c3034
+		sourceLineageTag: tpep_pickup_datetime
+		summarizeBy: none
+		sourceColumn: tpep_pickup_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column tpep_dropoff_datetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 57b1801b-ffb5-4ac1-a0de-6b4046b140cb
+		sourceLineageTag: tpep_dropoff_datetime
+		summarizeBy: none
+		sourceColumn: tpep_dropoff_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column passenger_count
+		dataType: int64
+		formatString: 0
+		lineageTag: f18783bd-1864-40fa-a65d-52297de78a98
+		sourceLineageTag: passenger_count
+		summarizeBy: sum
+		sourceColumn: passenger_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column trip_distance
+		dataType: double
+		lineageTag: 11571fbc-f460-4fbd-960d-00e583f4df63
+		sourceLineageTag: trip_distance
+		summarizeBy: sum
+		sourceColumn: trip_distance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RatecodeID
+		dataType: int64
+		formatString: 0
+		lineageTag: ac2045e9-76ce-4da5-b71f-830cf838c8ee
+		sourceLineageTag: RatecodeID
+		summarizeBy: count
+		sourceColumn: RatecodeID
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_type
+		dataType: int64
+		formatString: 0
+		lineageTag: e12d18f1-c3b6-4b9b-a75e-95ee7832e9a4
+		sourceLineageTag: payment_type
+		summarizeBy: sum
+		sourceColumn: payment_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column tip_amount
+		dataType: double
+		lineageTag: f3ebd906-3c4c-4878-84d5-f9435ddb6066
+		sourceLineageTag: tip_amount
+		summarizeBy: sum
+		sourceColumn: tip_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_amount
+		dataType: double
+		lineageTag: 8cac232c-4c76-4ffa-8d15-8bcd04c6edff
+		sourceLineageTag: total_amount
+		summarizeBy: sum
+		sourceColumn: total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Silver_NYC_Taxi = entity
+		mode: directLake
+		source
+			entityName: Silver_NYC_Taxi
+			schemaName: dbo
+			expressionSource: 'DirectLake - M_Lakehouse_Itransition'
+
